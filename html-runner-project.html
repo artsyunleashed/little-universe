@@ -1,0 +1,372 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><style>*{box-sizing:border-box}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+:root {
+  --cream: #FBF8F2;
+  --ink: #48413F;
+  --muted: #8F8580;
+  --pink: #F3D9D5;
+  --lilac: #DCD3EE;
+  --green: #D9E4D2;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 8%;
+  border-bottom: 1px solid #EDE5DB;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.nav-links a:hover {
+  color: #B17F91;
+}
+
+.hero {
+  min-height: 470px;
+  padding: 110px 20px 85px;
+  text-align: center;
+  position: relative;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #A68C8C;
+  line-height: 1.8;
+}
+
+.hero h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 65px);
+  line-height: 1.2;
+  margin: 25px 0 18px;
+}
+
+.hero h1 em {
+  color: #B88E9B;
+  font-weight: 500;
+}
+
+.intro {
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 360px;
+  margin: 0 auto 28px;
+}
+
+.explore {
+  display: inline-block;
+  border: 1px solid #D9C9C2;
+  border-radius: 30px;
+  padding: 13px 23px;
+  font-size: 12px;
+  transition: background .2s, transform .2s;
+}
+
+.explore:hover {
+  background: #F3E5E0;
+  transform: translateY(-2px);
+}
+
+.star {
+  position: absolute;
+  color: #C3A5B0;
+  font-size: 27px;
+}
+
+.star-one {
+  top: 115px;
+  left: 18%;
+}
+
+.star-two {
+  right: 18%;
+  bottom: 115px;
+}
+
+.section {
+  padding: 70px 8%;
+  text-align: center;
+  scroll-margin-top: 20px;
+}
+
+.section h2 {
+  font-size: clamp(27px, 4vw, 38px);
+  margin: 14px 0 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.card {
+  min-height: 210px;
+  padding: 25px;
+  border-radius: 7px;
+  transition: transform .25s;
+}
+
+.card:hover {
+  transform: translateY(-5px) rotate(-.5deg);
+}
+
+.card-pink { background: #F3E2DF; }
+.card-lilac { background: #E8E1F2; }
+.card-green { background: #E3EADB; }
+
+.card-icon {
+  font-size: 27px;
+}
+
+.card p {
+  margin-top: 24px;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  font-weight: 500;
+  margin: 12px 0;
+}
+
+.card > span:last-child {
+  color: #756C68;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.color-section {
+  background: #F4EFE7;
+}
+
+.color-section > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.palette {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 35px 0 20px;
+}
+
+.swatch {
+  width: 65px;
+  height: 65px;
+  background: var(--swatch);
+  border: 4px solid rgba(255,255,255,.8);
+  outline: 1px solid #E4DCD2;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.swatch:hover {
+  transform: scale(1.12);
+}
+
+.swatch:focus-visible {
+  outline: 2px solid #756C68;
+}
+
+#color-message {
+  min-height: 18px;
+}
+
+.journal {
+  padding-top: 95px;
+  padding-bottom: 95px;
+}
+
+.journal h2 {
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.journal > p:last-child {
+  color: var(--muted);
+  line-height: 2;
+}
+
+footer {
+  padding: 25px 15px;
+  text-align: center;
+  border-top: 1px solid #EDE5DB;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    padding: 20px 5%;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .hero {
+    padding-top: 85px;
+    min-height: 420px;
+  }
+
+  .star-one { left: 7%; }
+  .star-two { right: 7%; }
+
+  .section {
+    padding: 55px 6%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 175px;
+  }
+
+  .swatch {
+    width: 53px;
+    height: 53px;
+  }
+}
+</style></head><body>
+<div class="site">
+  <nav class="navbar">
+    <a class="logo" href="#">little universe ✳</a>
+    <div class="nav-links">
+      <a href="#inspiration">Inspiration</a>
+      <a href="#colors">Color lab</a>
+      <a href="#journal">Journal</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow">✷ YOUR LITTLE CORNER OF THE INTERNET ✷</p>
+    <h1>A little space to<br><em>collect things I love.</em></h1>
+    <p class="intro">
+      Thoughts, colors, tiny joys and everything
+      that makes ordinary days feel special.
+    </p>
+    <a class="explore" href="#inspiration">Wander around ↓</a>
+    <span class="star star-one">✳</span>
+    <span class="star star-two">✴</span>
+  </header>
+
+  <section id="inspiration" class="section">
+    <p class="eyebrow">A COLLECTION OF LITTLE THINGS</p>
+    <h2>Currently daydreaming about...</h2>
+
+    <div class="cards">
+      <article class="card card-pink">
+        <span class="card-icon">୨୧</span>
+        <p>01 — THE ART OF NOTICING</p>
+        <h3>Little details</h3>
+        <span>Finding magic in ordinary moments.</span>
+      </article>
+
+      <article class="card card-lilac">
+        <span class="card-icon">✿</span>
+        <p>02 — CREATIVE CORNER</p>
+        <h3>Making things</h3>
+        <span>Ideas that deserve to exist.</span>
+      </article>
+
+      <article class="card card-green">
+        <span class="card-icon">☁</span>
+        <p>03 — SLOW LIVING</p>
+        <h3>Soft mornings</h3>
+        <span>Romanticising the little things.</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="colors" class="section color-section">
+    <p class="eyebrow">A LITTLE COLOR THEORY</p>
+    <h2>Colors I'm keeping close.</h2>
+    <p>Click a color to copy its hex code.</p>
+
+    <div class="palette">
+      <button class="swatch" style="--swatch:#F3D9D5"
+        data-color="#F3D9D5" aria-label="Dusty pink"></button>
+      <button class="swatch" style="--swatch:#DCD3EE"
+        data-color="#DCD3EE" aria-label="Soft lavender"></button>
+      <button class="swatch" style="--swatch:#D9E4D2"
+        data-color="#D9E4D2" aria-label="Sage green"></button>
+      <button class="swatch" style="--swatch:#F6EBD5"
+        data-color="#F6EBD5" aria-label="Warm cream"></button>
+      <button class="swatch" style="--swatch:#C8DCE5"
+        data-color="#C8DCE5" aria-label="Powder blue"></button>
+    </div>
+    <p id="color-message" aria-live="polite">Choose your favorite shade ♡</p>
+  </section>
+
+  <section id="journal" class="section journal">
+    <p class="eyebrow">A NOTE TO SELF</p>
+    <h2>Things don't have to be perfect<br>to be beautiful.</h2>
+    <p>A tiny reminder to keep exploring, keep creating,<br>
+      and make room for things just because they bring joy.</p>
+  </section>
+
+  <footer>Made with curiosity & a little bit of magic ✳</footer>
+</div>
+<script>try{
+document.querySelectorAll('.swatch').forEach((swatch) => {
+  swatch.addEventListener('click', async () => {
+    const color = swatch.dataset.color;
+    const message = document.querySelector('#color-message');
+
+    try {
+      await navigator.clipboard.writeText(color);
+      message.textContent = `${color} copied! ♡`;
+    } catch {
+      message.textContent = `Your selected color: ${color}`;
+    }
+  });
+});
+}catch(e){document.body.innerHTML+='<div style="color:red;background:#ffe6e6;padding:10px;margin-top:20px;border-radius:4px;border:1px solid red;"><strong>Runtime Error:</strong> '+e.message+'</div>'}</script></body></html>
